@@ -8,7 +8,6 @@ parser.add_argument('number of days', type=str,
                     help='Provide minimum number of days. Example: \"python <script-name> 30\".The script will move files and folders which were created before 30 days.')
 
 args = parser.parse_args()
-print(args.accumulate(args.integers))
 
 
 if sys.argv[1]>str(0):
@@ -23,7 +22,6 @@ if sys.argv[1]>str(0):
     else:
         print('Directory already exists!')
 
-
     with os.scandir() as dir_entries:
         print('Moving files and folders which were created more than '+sys.argv[1]+' days ago.')
         for entry in dir_entries:
@@ -31,8 +29,6 @@ if sys.argv[1]>str(0):
 
             time_in_sec = time.time()-(int(sys.argv[1]) * 24 * 60 * 60) # Calcuting time in seconds
             if info.st_ctime<time_in_sec:
-
-                #print('Moving ' + entry.name + ' to the new directory')
                 os.rename(entry.path, dest+entry.name)
                 count=count+1
         if count!=0:

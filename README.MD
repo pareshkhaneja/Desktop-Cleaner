@@ -3,9 +3,11 @@
 
 Desktop cleaner moves the files and folders from your desktop(or any other directory) to new folder(created under "Documents" Directory) which were created before a specified number of days.
 
-## Getting-Started
-
+## Getting-Started 
 Clone the repository and make sure the script is available on your desktop.
+**Note:** If you want to make any other directory clean then make sure the script is run from that directory only.
+
+
 
 ### Running the script
 Example: 
